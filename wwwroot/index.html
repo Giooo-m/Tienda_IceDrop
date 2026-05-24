@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store ICE | DROP</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <nav class="navbar">
+        <div class="logo">ICE<span style="color: #d32f2f;"> DROP</span></div>
+        <div id="open-cart" class="cart-btn">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <nav class="filters">
+        <button class="filter-btn active" data-categoria="0">TODOS</button>
+        <button class="filter-btn" data-categoria="1">HOMBRE</button>
+        <button class="filter-btn" data-categoria="2">MUJER</button>
+        <button class="filter-btn" data-categoria="3">NIÑOS</button>
+    </nav>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <h2 class="cart-title">TU PEDIDO</h2>
+        
+        <div id="cart-items" class="cart-items-container"></div>
+
+        <div class="cart-footer">
+            <div class="cart-total-container">
+                <span>TOTAL:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button id="btn-checkout" class="btn-cart" style="width: 100%;">FINALIZAR COMPRA</button>
+            <p id="close-cart" class="close-cart-text">Seguir comprando</p>
+        </div>
+    </div>
+
+    <main id="contenedor-principal" class="main-container">
+        </main>
+
+    <script type="module" src="js/main.js"></script>
+
+    <div id="ticket-modal" class="modal-overlay">
+    <div class="ticket-card">
+        <div class="ticket-header">
+            <h1>ICE <span class="red-text">DROP</span></h1>
+            <p class="ticket-tagline">OFFICIAL RECEIPT</p>
+        </div>
+        
+        <div class="ticket-body">
+            <div class="user-info">
+                <p><strong>CLIENTE:</strong> <span id="ticket-user-name"></span></p>
+                <p><strong>CORREO:</strong> <span id="ticket-user-email"></span></p>
+                <p><strong>FECHA:</strong> <span id="ticket-date"></span></p>
+            </div>
+            
+            <div class="ticket-divider"></div>
+            
+            <div id="ticket-items" class="ticket-items-list">
+                </div>
+            
+            <div class="ticket-divider"></div>
+            
+            <div class="ticket-total-section">
+                <span>TOTAL PAGADO</span>
+                <h2 id="ticket-total">$0.00</h2>
+            </div>
+        </div>
+        
+        <div class="ticket-footer">
+            <p>¡GRACIAS POR TU COMPRA!</p>
+            <p class="footer-small">ESTE ES UN COMPROBANTE DIGITAL EXCLUSIVO</p>
+            <button id="btn-close-ticket" class="btn-ticket-close">FINALIZAR</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

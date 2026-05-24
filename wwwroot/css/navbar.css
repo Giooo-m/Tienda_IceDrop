@@ -1,0 +1,68 @@
+/* --- BARRA DE NAVEGACIÓN --- */
+.navbar {
+    position: fixed;
+    top: 0; width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 40px;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    border-bottom: 1px solid rgba(211, 47, 47, 0.3);
+}
+
+/* --- CONTENEDOR DE FILTROS --- */
+.filters {
+    margin-top: 85px;
+    display: flex; justify-content: center; gap: 10px;
+    padding: 10px;
+    z-index: 100;
+    position: relative;
+}
+
+/* --- BOTONES DE FILTRO (BASE) --- */
+.filters button, .filter-btn {
+    background: #111;
+    color: white;
+    border: 1px solid #333;
+    padding: 8px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    /* Transición suave y elástica */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* --- ESTADO HOVER --- */
+.filters button:hover, .filter-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* --- ESTADO ACTIVO (BOTÓN SELECCIONADO) --- */
+.filter-btn.active, .filters button.active {
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 20px rgba(211, 47, 47, 0.4);
+    transform: scale(1.1);
+}
+
+/* --- ANIMACIÓN DE ENTRADA PARA PRODUCTOS --- */
+.fade-in-blur {
+    animation: fadeInBlur 0.5s ease forwards;
+}
+
+@keyframes fadeInBlur {
+    from { 
+        opacity: 0; 
+        filter: blur(10px); 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        filter: blur(0); 
+        transform: translateY(0); 
+    }
+}

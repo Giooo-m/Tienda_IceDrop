@@ -1,0 +1,162 @@
+.auth-page {
+    background: #050505;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.auth-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Esfera de luz roja en el fondo */
+.glow-sphere {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(211, 47, 47, 0.15) 0%, transparent 70%);
+    filter: blur(50px);
+    z-index: 1;
+}
+
+.auth-card {
+    background: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(25px);
+    padding: 60px 40px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 10;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    position: relative;
+}
+
+/* Borde animado sutil */
+.card-border-glow {
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, #d32f2f, transparent);
+    animation: flowLine 3s linear infinite;
+}
+
+@keyframes flowLine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.logo-text { font-size: 2.5rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 5px; }
+.red-text { color: #d32f2f; text-shadow: 0 0 15px rgba(211, 47, 47, 0.5); }
+
+.input-container {
+    position: relative;
+    margin-top: 40px;
+}
+
+.input-container input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #333;
+    padding: 12px 0;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-container label {
+    position: absolute;
+    left: 0; top: 12px;
+    color: #555;
+    transition: 0.3s;
+    pointer-events: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.input-container input:focus ~ label,
+.input-container input:not(:placeholder-shown) ~ label {
+    top: -20px;
+    color: #d32f2f;
+    font-size: 0.7rem;
+}
+
+.btn-auth-premium {
+    margin-top: 40px;
+    width: 100%;
+    padding: 18px;
+    background: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 10px 20px rgba(211, 47, 47, 0.3);
+}
+
+.btn-auth-premium:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(211, 47, 47, 0.5);
+    background: #f44336;
+}
+
+.auth-footer a {
+    color: #d32f2f;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* --- MEJORAS DE DETALLE PARA ICE DROP --- */
+
+/* La línea roja que crece cuando haces clic en un input */
+.focus-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #d32f2f;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+}
+
+.input-container input:focus ~ .focus-line {
+    width: 100%;
+}
+
+/* Tipografía y Header */
+.auth-header p {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los links del footer (No tenías el hover) */
+.auth-footer {
+    margin-top: 25px;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.auth-footer a:hover {
+    color: white;
+    text-shadow: 0 0 10px rgba(211, 47, 47, 0.8);
+}
+
+/* Para que el logo se vea igual al de la tienda */
+.logo-text {
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    text-transform: uppercase;
+}

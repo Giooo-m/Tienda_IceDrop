@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ICE DROP | Acceso Exclusivo</title>
+    <link rel="stylesheet" href="css/main.css"> 
+    <link rel="stylesheet" href="css/auth.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+    <div class="auth-wrapper">
+        <div class="glow-sphere"></div>
+        
+        <div class="auth-card">
+            <div class="card-border-glow"></div>
+            
+            <header class="auth-header">
+                <h1 class="logo-text">ICE <span class="red-text">DROP</span></h1>
+                <p>WELCOME</p>
+            </header>
+
+            <form id="login-form" class="auth-form">
+                <div class="input-container">
+                    <input type="email" id="email" required placeholder=" ">
+                    <label>CORREO ELECTRÓNICO</label>
+                    <div class="focus-line"></div>
+                </div>
+
+                <div class="input-container">
+                    <input type="password" id="password" required placeholder=" ">
+                    <label>CONTRASEÑA</label>
+                    <div class="focus-line"></div>
+                </div>
+
+                <button type="button" id="btn-login-premium" class="btn-auth-premium">
+                    <span>INICIAR SESIÓN</span>
+                </button>
+
+                <div class="auth-footer">
+                    <p>¿NUEVO EN EL EQUIPO? <a href="register.html">ÚNETE AQUÍ</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="js/login.js"></script>
+</body>
+</html>

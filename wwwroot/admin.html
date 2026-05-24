@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ICE DROP | Admin Dashboard</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/admin.css"> <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ICE DROP <span style="color: #d32f2f;">ADMIN</span></div>
+        <a href="index.html" class="nav-link">VOLVER A TIENDA</a>
+    </nav>
+
+    <main class="admin-container">
+        <header class="admin-header">
+            <h1>GESTIÓN DE INVENTARIO</h1>
+            <button id="btn-nuevo-producto" class="btn-premium">+ NUEVO PRODUCTO</button>
+        </header>
+
+        <section class="glass-table-container">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>IMAGEN</th>
+                        <th>NOMBRE</th>
+                        <th>PRECIO</th>
+                        <th>STOCK</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-admin-productos">
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <div id="modal-producto" class="modal-overlay">
+        <div class="modal-card">
+            <h2 id="modal-titulo">NUEVO PRODUCTO</h2>
+            <form id="form-producto">
+                <input type="hidden" id="prod-id">
+                <div class="input-group">
+                    <input type="text" id="prod-nombre" required placeholder="Nombre del Producto">
+                </div>
+                <div class="input-group">
+                    <input type="number" id="prod-precio" required placeholder="Precio">
+                </div>
+                <div class="input-group">
+                    <input type="number" id="prod-stock" required placeholder="Stock inicial">
+                </div>
+                <div class="input-group">
+                    <input type="file" id="prod-imagen" accept="image/*">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" id="btn-cancelar" class="btn-secundario">CANCELAR</button>
+                    <button type="submit" class="btn-premium">GUARDAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+.admin-container {
+    height: 100vh; 
+    overflow-y: auto; /* scrroll hacia abajo*/
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.glass-table-container {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(211, 47, 47, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-table th {
+    color: #d32f2f;
+    padding: 15px;
+    border-bottom: 2px solid #222;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.admin-table td {
+    padding: 15px;
+    border-bottom: 1px solid #111;
+}
+
+.table-img {
+    width: 60px;
+    height: 40px;
+    object-fit: contain;
+    background: #111;
+    border-radius: 5px;
+}
+
+.btn-edit { color: #444; cursor: pointer; margin-right: 15px; transition: 0.3s; }
+.btn-edit:hover { color: #fff; text-shadow: 0 0 10px #fff; }
+
+.btn-delete { color: #d32f2f; cursor: pointer; transition: 0.3s; }
+.btn-delete:hover { color: #ff0000; text-shadow: 0 0 15px #ff0000; }
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.9);
+    display: none; justify-content: center; align-items: center; z-index: 10000;
+}
+.modal-overlay.active { display: flex; }
+.modal-card {
+    background: #0a0a0a; border: 1px solid #d32f2f;
+    padding: 40px; border-radius: 15px; width: 400px;
+    box-shadow: 0 0 50px rgba(211, 47, 47, 0.2);
+}

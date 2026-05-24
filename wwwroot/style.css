@@ -1,0 +1,168 @@
+/* RESET TOTAL */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box !important; 
+    font-family: 'Oswald', sans-serif; 
+}
+
+body {
+    background-color: #050505;
+    color: white;
+    overflow: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0; width: 100%;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 40px;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    border-bottom: 1px solid rgba(211, 47, 47, 0.3);
+}
+
+.cart-btn { position: relative; cursor: pointer; font-size: 1.2rem; }
+#cart-count {
+    position: absolute; top: -10px; right: -10px;
+    background: #d32f2f; font-size: 11px;
+    padding: 2px 6px; border-radius: 50%;
+    box-shadow: 0 0 10px #d32f2f;
+}
+
+/* FILTROS */
+.filters {
+    margin-top: 85px;
+    display: flex; justify-content: center; gap: 10px;
+    padding: 10px;
+    z-index: 100;
+    position: relative;
+}
+
+.filters button {
+    background: #111 !important;
+    color: white !important;
+    border: 1px solid #333;
+    padding: 8px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.filters button:hover { background: #d32f2f !important; border-color: #d32f2f; }
+
+/* CONTENEDOR SLIDER */
+.main-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    height: calc(100vh - 150px);
+    align-items: center;
+}
+.main-container::-webkit-scrollbar { display: none; }
+
+/* SECCIÓN PRODUCTO */
+.product-section {
+    min-width: 100vw;
+    height: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+
+/* TEXTO DE FONDO (MARCA DE AGUA MÁS FUERTE) */
+.brand-text {
+    position: absolute;
+    top: 45%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14vw;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.07) !important; /* Más fuerte como pediste */
+    z-index: 1;
+    pointer-events: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* EL TENI */
+.main-shoe {
+    max-height: 42vh;
+    width: auto;
+    max-width: 85%;
+    z-index: 10;
+    filter: drop-shadow(0 25px 50px rgba(0,0,0,0.9));
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-bottom: 10px;
+}
+
+.product-section:hover .main-shoe {
+    transform: scale(1.08) rotate(-5deg);
+}
+
+/* ÁREA DE PRECIO Y TITULO PEQUEÑO */
+.action-area {
+    z-index: 20;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.mini-title {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    color: #d32f2f;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: -10px;
+}
+
+.action-area h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* BOTÓN REDONDEADO */
+.btn-cart {
+    background-color: #d32f2f !important;
+    color: white !important;
+    padding: 14px 45px;
+    border: none !important;
+    border-radius: 50px !important;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(211, 47, 47, 0.4);
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.btn-cart:hover {
+    background-color: #ff1744 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(211, 47, 47, 0.6);
+}
+
+/* CARRITO */
+.cart-sidebar {
+    position: fixed;
+    right: -400px; top: 0;
+    width: 350px; height: 100vh;
+    background: #0a0a0a;
+    z-index: 99999;
+    padding: 40px 25px;
+    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    border-left: 1px solid #d32f2f;
+}
+.cart-sidebar.active { right: 0; }
